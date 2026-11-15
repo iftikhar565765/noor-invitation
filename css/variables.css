@@ -1,0 +1,104 @@
+/* ═══════════════════════════════════════════════════════════════
+   NOOR · variables.css — the emerald darbar design system
+   ---------------------------------------------------------------
+   Built from four materials of the garden court: pearl ivory,
+   deep emerald silk, antique gold, and the quiet rose of old
+   terracotta. Dark bands are emerald night (never umber, never
+   navy). Every colour token is overwritten at runtime by main.js
+   applyTheme(); defaults mirror the noor (emerald) preset.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── the noor palette (emerald darbar) ─────────────────────── */
+  --burgundy:      #0E4B3A;   /* emerald — primary accent          */
+  --burgundy-deep: #0A3A2D;   /* compressed emerald                */
+  --wine:          #06281F;   /* deep forest — warm dark accents   */
+  --crimson:       #DCE8DD;   /* pale celadon — light accent       */
+  --champagne:     #C0A052;   /* antique gold                      */
+  --champagne-soft:#96762F;   /* burnished gold                    */
+  --parchment:     #EFE8D4;   /* warm silk cream                   */
+  --ivory:         #F4EFE2;   /* pearl ivory page ground           */
+  --paper-raised:  #FCF9F0;   /* raised card paper                 */
+  --night:         #0A2E24;   /* emerald dusk (dark bands)         */
+  --night-deep:    #051F18;   /* deep emerald night                */
+  --olive:         #5F7A5A;   /* garden leaf                       */
+  --olive-deep:    #466042;
+  --sage:          #AEC0AA;   /* pale leaf                         */
+  --rose:          #E7CDB4;   /* pearl blush gold                  */
+  --ink:           #1F2A25;   /* batali ink (calligraphy black)    */
+  --ink-soft:      #5C6B60;   /* leaf umber                        */
+  --charcoal:      #9AA79B;
+
+  /* ── derived golds ────────────────────────────────────────── */
+  --gold:          var(--champagne);
+  --gold-bright:   color-mix(in srgb, var(--champagne) 66%, #F3E6BE);
+  --gold-dim:      color-mix(in srgb, var(--champagne) 58%, var(--ink) 14%);
+  --gold-line:     color-mix(in srgb, var(--champagne) 52%, transparent);
+  --gold-faint:    color-mix(in srgb, var(--champagne) 26%, transparent);
+  --gold-ghost:    color-mix(in srgb, var(--champagne) 13%, transparent);
+
+  /* ── paper tones ──────────────────────────────────────────── */
+  --paper-line:    color-mix(in srgb, var(--champagne-soft) 50%, transparent);
+  --paper-wash:    color-mix(in srgb, var(--wine) 3%, var(--paper-raised));
+  --cream-deep:    color-mix(in srgb, var(--parchment) 62%, var(--ivory) 38%);
+
+  /* ── the darbar's own derived tones — lantern light at dusk ─ */
+  --sky-1:         var(--night-deep);
+  --sky-2:         color-mix(in srgb, var(--night) 84%, var(--olive) 16%);
+  --glass:         color-mix(in srgb, var(--night) 55%, transparent);
+  --glass-deep:    color-mix(in srgb, var(--night-deep) 72%, transparent);
+  --glass-edge:    color-mix(in srgb, var(--champagne) 26%, transparent);
+  --gilding:       color-mix(in srgb, var(--champagne) 86%, white 14%);
+  --gilding-soft:  color-mix(in srgb, var(--champagne) 55%, transparent);
+  --sunset:        color-mix(in srgb, var(--parchment) 88%, var(--champagne) 12%);
+  --sunset-soft:   color-mix(in srgb, var(--parchment) 58%, transparent);
+  --night-ink:     color-mix(in srgb, var(--parchment) 66%, transparent);
+  --night-faint:   color-mix(in srgb, var(--parchment) 48%, transparent);
+  --ember:         color-mix(in srgb, var(--champagne) 40%, #F3E6BE 60%);
+
+  /* ── luxury hardware — hairlines and soft shadow layers ───── */
+  --line:          color-mix(in srgb, var(--champagne) 44%, transparent);
+  --line-strong:   color-mix(in srgb, var(--champagne-soft) 72%, transparent);
+  --shadow-soft:   0 14px 40px -18px color-mix(in srgb, var(--night-deep) 42%, transparent),
+                   0 4px 14px -8px color-mix(in srgb, var(--night-deep) 24%, transparent);
+  --shadow-lift:   0 26px 60px -26px color-mix(in srgb, var(--night-deep) 48%, transparent),
+                   0 8px 22px -12px color-mix(in srgb, var(--night-deep) 30%, transparent);
+  --shadow-card:   var(--shadow-lift);
+  --shadow-gold:   0 1px 0 rgba(255, 248, 224, .6) inset;
+  --shadow-seal:   0 4px 10px color-mix(in srgb, var(--emerald, #0E4B3A) 28%, transparent),
+                   0 14px 30px color-mix(in srgb, #0E4B3A 16%, transparent);
+
+  /* ── type ───────────────────────────────────────────────────
+     Marcellus — carved plaque caps & the numerals voice ·
+     Cormorant — engraved editorial titles · Pinyon Script — the
+     romantic hand · La Belle Aurore — marginalia · EB Garamond —
+     the prose · Jost — labels · Amiri — the Quranic voice.
+     All overwritten at runtime from config.fonts.               */
+  --font-editorial: 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+  --font-display:   'Marcellus', 'Georgia', serif;
+  --font-script:    'Pinyon Script', 'Segoe Script', 'Apple Chancery', cursive;
+  --font-hand:      'La Belle Aurore', 'Bradley Hand', 'Segoe Script', cursive;
+  --font-body:      'EB Garamond', 'Georgia', serif;
+  --font-ui:        'Jost', 'Trebuchet MS', 'Segoe UI', sans-serif;
+  --font-arabic:    'Amiri', 'Scheherazade New', 'Traditional Arabic', serif;
+  --font-arabic-disp: 'Aref Ruqaa', 'Amiri', serif;
+
+  /* ── flow of type sizes ───────────────────────────────────── */
+  --fs-hero-names:  clamp(3.4rem, 9vw, 6.2rem);
+  --fs-display:     clamp(2.1rem, 5.2vw, 3.3rem);
+  --fs-title:       clamp(1.55rem, 3.6vw, 2.35rem);
+  --fs-subtitle:    clamp(1.02rem, 2.2vw, 1.28rem);
+  --fs-body:        clamp(.98rem, 1.7vw, 1.13rem);
+  --fs-label:       clamp(.66rem, 1.25vw, .78rem);
+  --fs-numerals:    clamp(2rem, 5vw, 3.1rem);
+
+  /* ── measures & rhythm ────────────────────────────────────── */
+  --measure:        34rem;
+  --scene-pad-y:    clamp(4.4rem, 10vh, 7.2rem);
+  --scene-pad-x:    clamp(1.4rem, 5vw, 3.2rem);
+  --card-radius:    6px;
+  --speed:          .42s;
+  --ease:           cubic-bezier(.22, .75, .3, 1);
+
+  color-scheme: light;
+}
