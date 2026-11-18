@@ -2,8 +2,7 @@
    NOOR · cinema.css — the darbar, filmed
    ---------------------------------------------------------------
    The invitation staged like a period epic: a graded lens
-   (vignette + a breath of film grain), theatre letterbox bars
-   that lift as the envelope opens, lantern-lit scenes with
+   (vignette + a breath of film grain), lantern-lit scenes with
    pools of gold light, a slow Ken Burns drift on the arch
    plate, candle-glow blooms on the calligraphy and art graded
    toward the emerald palette. Everything is decoration — no
@@ -50,36 +49,6 @@ body.cinema::after {
   100% { background-position: 0 0; }
 }
 
-/* ═══ THE CURTAIN — letterbox bars that lift with the reveal ════ */
-
-.cinema-bar {
-  position: fixed;
-  left: 0;
-  right: 0;
-  height: clamp(40px, 6.4vh, 86px);
-  z-index: 96;
-  pointer-events: none;
-  background: linear-gradient(180deg,
-    color-mix(in srgb, #02130D 92%, black) 0%,
-    var(--night-deep) 86%,
-    color-mix(in srgb, var(--night-deep) 60%, transparent) 100%);
-  transition: transform 1.7s cubic-bezier(.72, 0, .18, 1) .3s;
-  will-change: transform;
-}
-.cinema-bar--top {
-  top: 0;
-  box-shadow: 0 1px 0 color-mix(in srgb, var(--champagne) 30%, transparent);
-  background: linear-gradient(0deg,
-    color-mix(in srgb, #02130D 92%, black) 0%,
-    var(--night-deep) 86%,
-    color-mix(in srgb, var(--night-deep) 60%, transparent) 100%);
-}
-.cinema-bar--bottom {
-  bottom: 0;
-  box-shadow: 0 -1px 0 color-mix(in srgb, var(--champagne) 30%, transparent);
-}
-html.cinema-open .cinema-bar--top { transform: translateY(-102%); }
-html.cinema-open .cinema-bar--bottom { transform: translateY(102%); }
 
 /* ═══ SCENE LIGHTING — pools of lantern light per scene ═════════ */
 
@@ -347,7 +316,6 @@ html.cinema-open .arch-card__names .arch-card__name:nth-child(3) {
 
 @media (prefers-reduced-motion: reduce) {
   body.cinema::after { animation: none; }
-  .cinema-bar { transition: none; }
   html.cinema-open .arch-card,
   .noor-stage__shamsa,
   .scene--countdown::after,
